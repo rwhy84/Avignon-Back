@@ -1,0 +1,5 @@
+App\Entity\Category:
+  itemOperations:
+    get: ~
+    put: ~
+    patch: ~

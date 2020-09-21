@@ -1,0 +1,8 @@
+App\Entity\User:
+  attributes:
+    denormalization_context:
+      groups: ["user:write"]
+    normalization_context:
+      groups: ["user:read", "event:read"]
+  collectionOperations: [POST]
+  itemOperations: [GET, PUT]

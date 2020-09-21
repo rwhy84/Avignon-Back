@@ -1,0 +1,51 @@
+{% extends 'base-admin.html.twig' %}
+
+{% block dashboard %}
+
+ <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-10">
+                        <h2 class="title-1 m-b-25">Tous les etablissements:</h2>
+                        <div class="table-responsive table--no-card m-b-40">
+<table class="table table-borderless table-striped table-earning">
+<thead>
+<tr>
+<th>Nom</th>
+<th>Adresse</th>
+<th>Description</th>
+{# <th class="text-right">Etablissement</th> #}
+<th class="text-right">Categorie</th>
+<th class="text-right">Modifier</th>
+<th class="text-right">Supprimer</th>
+</tr>
+</thead>
+<tbody>
+
+
+{% for etab in etablissement %}
+<tr>
+<td style="font-weight: bold">{{ etab.name |slice(0, 20) }}</td>
+<td>{{ etab.adress | slice(0, 10) }}...</td>
+<td>{{ etab.description | slice(0, 20) }}...</td>
+{# <td>{{event.etablissement}}</td> #}
+
+{# <td class="text-right">{{event.etablissement}}</td> #}
+<th class="text-right">{{etab.category.name}}</th>
+<td class="text-right"><a class="btn btn-warning" href="{{ path('etablissement_edit',{'id': etab.id}) }}">Editer</a></button></td>
+<td class="text-right"><a class="btn btn-danger" href="{{ path('etablissement_delete',{'id': etab.id}) }}">Supprimer</a></button></td>
+</tr>
+    
+{% endfor %}
+
+</tbody>
+</table>
+
+<div class="navigation">
+    {{knp_pagination_render(etablissement)}}
+</div>
+</div>
+</div>
+
+
+
+    
+{% endblock %}

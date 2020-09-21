@@ -1,0 +1,14 @@
+{% extends "base-admin.html.twig" %}
+
+
+{% block dashboard %}
+    <h1></h1>
+<div class="container">
+    {{form_start(postForm)}}
+    {{form_widget(postForm)}}
+    <button class="btn btn-block btn-lg btn-primary" type="submit">Editer la catégorie</button>
+    {{form_end(postForm)}}
+
+</div>
+
+{% endblock %}

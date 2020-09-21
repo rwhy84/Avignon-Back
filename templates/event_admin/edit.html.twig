@@ -1,0 +1,29 @@
+{% extends "base-admin.html.twig" %}
+
+
+{% block dashboard %}
+<div class="container">
+    <h1></h1>
+
+    {{form_start(postForm)}}
+    {{form_row(postForm.name)}}
+    {{form_row(postForm.description)}}
+    {# {{form_row(postForm.coverImage)}} #}
+    {{form_row(postForm.imageFile)}}
+    <div class="row">
+    <div class="col-md-6 col-sm-12">{{form_row(postForm.startEvent)}}</div>
+    <div class="col-md-6 col-sm-12">{{form_row(postForm.endEvent)}}</div>
+    
+    
+    </div>
+    {# {{form_widget(postForm)}} #}
+    <button class="btn btn-block btn-lg btn-primary" type="submit">Editer l'évènement</button>
+    {{form_end(postForm)}}
+</div>
+<style>
+.vich-image > a > img {
+    width: 20%;
+    border-radius: 1.5em;
+}
+</style>
+{% endblock %}

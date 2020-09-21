@@ -1,0 +1,14 @@
+{% extends "base-admin.html.twig" %}
+
+
+{% block dashboard %}
+    <h1></h1>
+    <div class="container">
+    {{form_start(postForm)}}
+    {{form_widget(postForm)}}
+    <button type="submit">Créer</button>
+    {{form_end(postForm)}}
+
+    </div>
+
+{% endblock %}

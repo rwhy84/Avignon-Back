@@ -1,0 +1,9 @@
+App\Entity\Etablissement:
+  attributes:
+    normalization_context:
+      groups: ["etablissement:read"]
+  itemOperations:
+    get: ~
+    put: ~
+    patch: ~
+    delete: ~

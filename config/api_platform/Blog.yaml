@@ -1,0 +1,9 @@
+App\Entity\Blog:
+  attributes:
+    normalization_context:
+      groups: ["blog:read"]
+  itemOperations:
+    get: ~
+    put: ~
+    patch: ~
+    delete: ~

@@ -1,0 +1,46 @@
+{% extends "base-admin.html.twig" %}
+{% block dashboard %}
+
+
+                        <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-10">
+                        <h2 class="title-1 m-b-25">Toutes les articles:</h2>
+                        <div class="table-responsive table--no-card m-b-40">
+<table class="table table-borderless table-striped table-earning">
+<thead>
+<tr>
+{# <th class="text-right">Etablissement</th> #}
+<th>Id</th>
+<th>Nom</th>
+<th>Créé le:</th>
+<th class="text-right">Modifier</th>
+<th class="text-right">Supprimer</th>
+</tr>
+</thead>
+<tbody>
+
+
+{% for art in article %}
+<tr>
+<td style="font-weight: bold">{{ art.id}}</td>
+<td style="font-weight: bold">{{ art.title |slice(0, 20) }}</td>
+<td style="font-weight: bold">{{ art.createdAt | date("m/d/Y") }}</td>
+{# <td>{{event.etablissement}}</td> #}
+
+{# <td class="text-right">{{event.etablissement}}</td> #}
+<td class="text-right"><a class="btn btn-warning" href="{{ path('blog_edit',{'id': art.id}) }}">Editer</a></td>
+<td class="text-right"><a class="btn btn-danger" href="{{ path('blog_delete',{'id': art.id}) }}">Supprimer</a></td>
+</tr>
+    
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+<a class="btn btn-block btn-lg btn-primary" href="{{ path('blog_create') }}">Créer un article</a>
+</div>
+
+
+
+    
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base-admin.html.twig" %}
+{% block dashboard %}
+
+
+                        <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-10">
+                        <h2 class="title-1 m-b-25">Toutes les catégories:</h2>
+                        <div class="table-responsive table--no-card m-b-40">
+<table class="table table-borderless table-striped table-earning">
+<thead>
+<tr>
+{# <th class="text-right">Etablissement</th> #}
+<th>Nom</th>
+<th class="text-right">Modifier</th>
+<th class="text-right">Supprimer</th>
+</tr>
+</thead>
+<tbody>
+
+
+{% for cat in category %}
+<tr>
+<td style="font-weight: bold">{{ cat.name |slice(0, 20) }}</td>
+{# <td>{{event.etablissement}}</td> #}
+
+{# <td class="text-right">{{event.etablissement}}</td> #}
+<td class="text-right"><a class="btn btn-warning" href="{{ path('category_edit',{'id': cat.id}) }}">Editer</a></td>
+<td class="text-right"><a class="btn btn-danger" href="{{ path('category_delete',{'id': cat.id}) }}">Supprimer</a></td>
+</tr>
+    
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+<a class="btn btn-block btn-lg btn-primary" href="{{ path('category_create') }}">Créer une catégorie</a>
+</div>
+
+
+
+    
+{% endblock %}

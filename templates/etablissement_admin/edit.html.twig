@@ -1,0 +1,35 @@
+{% extends "base-admin.html.twig" %}
+
+
+{% block dashboard %}
+    <div class="container">
+
+        {{form_start(postForm)}}
+    {{form_row(postForm.name)}}
+    {{form_row(postForm.adress)}}
+    {{form_row(postForm.description)}}
+    {# {{form_row(postForm.coverImage)}} #}
+    {{form_row(postForm.imageFile)}}
+    {{form_row(postForm.category)}}
+
+    
+    {# {{form_widget(postForm)}} #}
+    <button class="btn btn-block btn-lg btn-primary" type="submit">Editer l'établissement</button>
+    {{form_end(postForm)}}
+</div>
+
+
+
+    {# {{form_start(postForm)}}
+    {{form_widget(postForm)}}
+    <button class="btn btn-block btn-lg btn-primary" type="submit">Editer l'établissement</button>
+    {{form_end(postForm)}}
+
+</div> #}
+<style>
+.vich-image > a > img {
+    width: 20%;
+    border-radius: 1.5em;
+}
+</style>
+{% endblock %}
